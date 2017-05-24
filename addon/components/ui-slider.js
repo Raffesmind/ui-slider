@@ -73,9 +73,7 @@ export default Ember.Component.extend({
     if(immediateResponse) {
       Ember.run.schedule('afterRender', () => {
         this._slider.on('slide', function(evt) {
-          Ember.run.debounce(() => {
-            self.set('value', evt.value);
-          },30);
+          self.set('value', evt.value);
         });
       });
     } else {
